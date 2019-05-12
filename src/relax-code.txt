@@ -1,0 +1,34 @@
+<div className="Home">
+
+    <br/><br/><br/><br/><br/>
+        <Parallax speed={-2} centered>
+  I’m slow and smooth
+</Parallax>
+  <br/><br/><br/><br/><br/>
+
+    <Parallax speed={10}>
+  I’m slow and smooth
+</Parallax>
+
+
+    </div>
+
+
+    $theme: light;
+
+$bgcolor: #222222;
+
+@if($theme== light)		 {
+		$bgcolor: white;	
+}
+@else {
+		$bgcolor: black;	
+}
+
+
+$body-height: 200vh;
+
+.Home {
+  height: $body-height;
+  background-color: $bgcolor;
+}

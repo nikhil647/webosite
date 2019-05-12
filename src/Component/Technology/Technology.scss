@@ -1,0 +1,78 @@
+.Technology {
+  height: 300px;
+  width: 100%;
+
+  background-color: white;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+
+    .TechWorkHeading {
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      color: black;
+
+      margin-top: 30px;
+
+      font-size: 2rem;
+      font-family: 'Wendy One', sans-serif;
+
+      position: relative;
+
+
+
+          animation-duration: 4s;
+          animation-delay: 1s;
+          animation-iteration-count: infinite;
+
+          z-index: 1;
+
+    }
+
+
+      .TechWorkHeading::after {
+        position: absolute;
+        bottom: 0;
+        left: 50;
+        height: 4px;
+        content: '';
+        width: 100px;
+        display: block;
+        background-color: #CEAB12;
+      }
+
+
+  .TechImageContainer{
+    margin-top: 30px;
+    width: 100%;
+
+    height: 130px;
+
+    position: relative;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+
+overflow-x: hidden;
+overflow-y: hidden;
+      i{
+        margin: 20px 30px;
+        font-size: 130px;
+      }
+  }
+}
+
+.Technology.night {
+    background-color: #293742;
+    .TechWorkHeading.night {
+      color: white;
+    }
+}

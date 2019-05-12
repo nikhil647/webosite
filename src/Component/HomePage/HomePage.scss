@@ -1,0 +1,153 @@
+
+@mixin Mobile-screen() {
+	@media only screen and (max-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin PCMode-screen() {
+	@media only screen and (min-width: 1024px) {
+		@content;
+	}
+}
+
+
+.HomePage {
+  height: 100vh;
+
+  background-color: rgba(255,255,255, 0.4);
+
+  display: flex;
+  flex-direction: column;
+
+  video {
+  object-fit: fill;
+
+  @include Mobile-screen {
+      display: none;
+  };
+
+
+  }
+
+	.Image{
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+
+
+		  @include PCMode-screen {
+		    display: none;
+		  };
+
+	}
+
+  .myVideo {
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -2;
+    }
+
+  .Me-And-Myself {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    height: 100%;
+
+
+          @include Mobile-screen {
+              margin-top: 0px;
+
+          };
+
+    .TwoBoxHolder{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+
+
+      @include Mobile-screen {
+        height: 100%;
+        margin-top: 5vh;
+        align-items: flex-start;
+      };
+
+    }
+
+    .Image-Holder{
+      width: 350px;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+      @include Mobile-screen {
+        display: none;
+      };
+
+
+
+    }
+
+    .Info {
+      width: 400px;
+      height: 400px;
+      margin-left: 65px;
+      font-size: 2rem;
+      font-family: 'Montserrat', sans-serif;
+
+
+
+                    @include Mobile-screen {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                    };
+
+      .Hello{
+        font-weight: bold;
+        font-size: 3rem;
+        text-align: left;
+
+
+        @include Mobile-screen {
+              display: flex;
+              flex-direction: column;
+              margin-left: 10px;
+        };
+
+      }
+    }
+
+    .Info-text{
+        font-size: 1.20rem;
+        font-family: 'Roboto Mono', monospace;
+
+                @include Mobile-screen {
+                      margin-left: 10px;
+                };
+    }
+  }
+}
+
+.HomePage.night {
+    background-color: rgba(41,55,66, 0.6);
+
+          .Hello.night{
+            color: white;
+          }
+
+    .Info-text.night{
+        color: white;
+    }
+}

@@ -1,0 +1,198 @@
+@mixin Mob-screen() {
+	@media only screen and (max-width: 480px) {
+		@content;
+	}
+}
+
+@mixin Tab-screen() {
+	@media only screen and (max-width: 1024px) {
+		@content;
+	}
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.WhyMe {
+  height: auto;
+  width: 100%;
+
+  padding: 10px;
+  box-sizing: border-box;
+
+  background-color: #EDF2F6;
+
+
+  .forText{
+
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 30px;
+
+    font-size: 2rem;
+    font-family: 'Wendy One', sans-serif;
+
+    position: relative;
+
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+
+    z-index: 1;
+  }
+
+  .forText::after {
+      position: absolute;
+      bottom: 0;
+      left: 50;
+      height: 4px;
+      content: '';
+
+      width: 100px;
+
+      display: block;
+      background-color: #CEAB12;
+  }
+
+
+
+
+  .CardHolder {
+    width: 100%;
+    margin-top: 40px;
+
+    display: flex;
+    justify-content: center;
+
+
+
+    box-sizing: border-box;
+    padding: 0px 20px;
+
+    @include Mob-screen {
+      flex-direction: column;
+    }
+
+    .TwoCardHolder {
+
+      display: flex;
+      width: 50%;
+
+      @include Tab-screen {
+        flex-direction: column;
+      }
+
+      @include Mob-screen {
+        width: 100%;
+      }
+
+
+
+      .card {
+        width: 50%;
+        height: 380px;
+        padding: 10px;
+
+        flex-direction: column;
+
+
+              @include Tab-screen {
+                width: 100%;
+              }
+
+              .ActualCard {
+
+
+                  padding: 10px;
+                    box-sizing: border-box;
+
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 25px;
+
+                                  .image-icon-holder{
+
+                                    padding: 20px;
+
+                                    box-sizing: border-box;
+                                    background: #FAD53A;
+                                    border-radius: 50%;
+                                    width: 100%;
+                                    height: 100%;
+
+                                    display: flex;
+                                    justify-content: center;
+
+
+                                    margin-top: 25px;
+                                      .material-icons{
+                                        font-size: 160px;
+                                      }
+                                  }
+
+                                  .text-Heading {
+                                      text-align: center;
+                                      margin-top: 20px;
+                                      font-family: 'Montserrat', sans-serif;
+                                      font-size: 27px;
+                                  }
+
+                                  .text-Description {
+                                    margin-top: 10px;
+                                    font-family: 'Montserrat', sans-serif;
+                                    font-size: 17px;
+
+                                    text-align: center;
+
+                                    .fa{
+                                        color:red;
+                                    }
+
+
+                                  }
+
+              }
+
+
+
+
+      }
+
+      .card:hover{
+
+          transform: translate(0px,-20px);
+          transition-duration: 0.5s;
+      }
+
+
+    }
+  }
+}
+
+.WhyMe.night {
+  background-color: #293742;
+color: white;
+
+    .forText.night {
+      color: white;
+    }
+
+    .ActualCard.night {
+      .image-icon-holder.night{
+        background:  #CEAB12;
+      }
+    }
+
+/*
+    .image-icon-holder. {
+      background: #CEAB12;
+    }
+*/
+
+}

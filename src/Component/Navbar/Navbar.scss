@@ -1,0 +1,86 @@
+
+@mixin Mobile-screen() {
+	@media only screen and (max-width: 1024px) {
+		@content;
+	}
+}
+
+
+.Navbar-Component{
+
+  @include Mobile-screen {
+    display: none;
+  };
+
+  display: flex;
+  align-items: center;
+
+  height: 60px;
+  box-shadow: 2px 2px 2px #888888;
+
+  position: fixed;
+  width: 100%;
+
+	z-index: 3;
+
+}
+
+.Navbar-Component.night {
+  color: white;
+}
+
+
+.Navbar-Component.nav-colored {
+  background-color: white;
+}
+
+
+.Navbar-Component.nav-colored.night {
+  background-color: rgb(41,55,66);
+}
+
+
+.Logo-Name {
+  font-family: 'Wendy One', sans-serif;
+  font-size: 25px;
+  margin-left: 90px;
+}
+
+.Spacer {
+  flex: 1;
+}
+
+.Other-Nav-Component {
+  display: flex;
+  margin-right: 50px;
+
+  .Nav-item{
+    display: flex;
+    margin: 5px;
+    padding: 10px;
+
+
+      .icon-holder {
+          margin-left: 6px;
+          margin-right: 6px;
+
+					.bounce {
+		        animation-duration: 3s;
+						animation-delay: 10s;
+		        animation-iteration-count: 4;
+		      }
+      }
+
+      .Nav-item-text{
+            font-family: 'Montserrat', sans-serif;
+            font-weight: lighter;
+            padding-top: 2px;
+      }
+
+  }
+      .Nav-item:hover {
+        cursor: pointer;
+        background-color: #CEAB12;
+
+      }
+}

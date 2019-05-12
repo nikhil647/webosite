@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Gugi|Montserrat|Raleway|Roboto+Mono|Wendy+One');
+
+
+@mixin PC-screen() {
+	@media only screen and (min-width: 1024px) {
+		@content;
+	}
+}
+
+
+$bgcolor: #F5F8FA;
+
+
+.Fullpage{
+	height: auto;
+	.SpacerApp {
+		height: 50px;
+		background: linear-gradient(to right, #ffffff 0%, #c8d8e2 100%);
+	}
+	.SpacerApp.night {
+		background: linear-gradient(to right, #666699 8%, #293742 62%);
+	}
+}
+
+.HideMeInPc {
+	@include PC-screen{
+		display: none;
+	}
+}
+
+::selection {
+  background-color: #CEAB12;
+}

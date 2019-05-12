@@ -1,0 +1,137 @@
+@mixin Mobile-screen() {
+	@media only screen and (max-width: 1024px) {
+		@content;
+	}
+}
+
+
+.WhyMe {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+      background-color: #F5F8FA;
+
+
+            @include Mobile-screen {
+                height: 200vh;
+            };
+
+
+  .WhyMeHolder {
+
+    height: 80%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+
+
+
+    .WhyMeText {
+        height: 18%;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        margin-bottom: 30px;
+
+        font-size: 2rem;
+        font-family: 'Wendy One', sans-serif;
+
+        animation-duration: 2s;
+        animation-delay: 1s;
+        animation-iteration-count: infinite;
+
+				
+
+        z-index: 1;
+
+        position: relative;
+
+
+                    @include Mobile-screen {
+                        height: 100px;
+                    };
+
+    }
+    .WhyMeText::after {
+        position: absolute;
+        bottom: 0;
+        left: 50;
+        height: 4px;
+        content: '';
+
+        width: 100px;
+
+        display: block;
+
+
+        background-color: #CEAB12;
+
+    }
+
+    .WhyMeIcons{
+
+      height: 100%;
+      display: flex;
+
+      @include Mobile-screen {
+        flex-direction: column;
+      };
+        .Half-Features{
+
+          width: 50%;
+          height: 100%;
+
+          display: flex;
+          flex-direction: column;
+          background-color: pink;
+          border: 1px solid #888888;
+
+          @include Mobile-screen {
+            width: 100%;
+            height: auto;
+          };
+
+            .Feature{
+                        box-sizing: border-box;
+                        width: 100%;
+                        height: 50%;
+                        padding: 10px;
+                        border: 1px solid #888888;
+
+
+                                  @include Mobile-screen {
+                                    height: 100%;
+                                  };
+
+                .Card-Pateli {
+                  box-sizing: border-box;
+                  width: 100%;
+                  height: 100%;
+                  background-color: white;
+                  border-radius: 25px;
+                  box-shadow: 5px 5px 4px #888888;
+                  padding: 10px;
+
+
+
+                }
+
+                .Card-Pateli:hover {
+                  transition-duration: 0.5s;
+                  transform: translate(0px, -10px);
+                  box-shadow: -5px -5px 4px #888888;
+                }
+
+          }
+        }
+    }
+
+  }
+}

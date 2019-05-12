@@ -1,0 +1,45 @@
+.Footer{
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+
+
+  .iconProfiles{
+      display: flex;
+      height: 80px;
+
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+
+      .item{
+
+        cursor: pointer;
+
+        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+      }
+      .item:hover{
+        box-shadow: 1px 1px 2px #888888, -1px -1px 2px #888888;
+      }
+
+  }
+
+  .LastLine{
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+.Footer.night{
+
+  color: white;
+  background-color: #293742;
+
+
+}
